@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    border: 1px solid #bababa;
+    gap: 20px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+/* Fix nesting issues in regular CSS */
+.card-image {
+    width: 400px;
+    height: 300px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: stretch;
+}
+
+.card-details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-details button {
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #3896fd;
+    color: white;
+    border-radius: 0; /* Avoiding round corners */
+    margin-bottom: 30px;
+    border: none;
+}
+
+.container, .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.container {
+    margin: auto;
+    width: 100vw;
+    height: 20vh;
+    background-color: white;
+}
+
+.btn:active {
+    background-color: #3896fd;
+    color: white;
+}
+
+.btn {
+    width: 80px;
+    font-size: larger;
+    aspect-ratio: 1;
+    border-radius: 0; /* Avoiding round corners */
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+}
