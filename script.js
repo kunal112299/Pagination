@@ -47,23 +47,56 @@ function showData(data){
     pageData.forEach(element => {
         createCard(element);
     });
+    renderPagination();
 }
+
+function renderPagination(){
+
+    
+
+    const pageContainer = document.querySelector('.pagination');
+    pageContainer.innerHTML ="";
+
+    let previousButton = document.createElement('button');
+    previousButton.classList.add('btn');
+    previousButton.textContent = "<";
+    pageContainer.append(previousButton);
+
+    for (let i= 0; i<pageSize; i++){
+        let pageButton = document.createElement('button');
+        pageButton.classList.add('btn');
+        pageButton.textContent = i+1;
+        console.log(i,page);
+        if(i === page){
+            pageButton.classList.add('active');
+        }
+
+        pageContainer.append(pageButton);   
+    }
+
+    let nextButton = document.createElement('button');
+    nextButton.classList.add('btn');
+    nextButton.textContent=">";
+    pageContainer.append(nextButton);
+}
+
+
 function handleClick(e) {
     if(e.target.classList.contains("btn")){
         let newPage = e.target.textContent;
 
         if(newPage === "<"){
-            if(page>1){
+            if(page>0){
                 page--;
                 getData(page);
             }
         }else if(newPage ===">"){
-            if(page<pageSize){
+            if(page<pageSize-1){
                 page++;
                 getData(page);
             }
         }else{
-            page = parseInt(newPage);
+            page = parseInt(newPage)-1;
             getData(page);
         }
     }

@@ -72,10 +72,7 @@
     background-color: white;
 }
 
-.btn:active {
-    background-color: #3896fd;
-    color: white;
-}
+
 
 .btn {
     width: 80px;
@@ -84,4 +81,9 @@
     border-radius: 0; /* Avoiding round corners */
     border: 1px solid #eaeaea;
     background-color: #ffffff;
+}
+
+.active {
+    background-color: #3896fd;
+    color: white;
 }
