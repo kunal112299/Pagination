@@ -2,7 +2,7 @@ let content = document.getElementById('content');
 
 
 let page = 0;
-let contentSize = 8;
+let contentSize = 3;
 let pageSize;
 
 const createCard = (recipe) => {
@@ -62,6 +62,11 @@ function renderPagination(){
     previousButton.textContent = "<";
     pageContainer.append(previousButton);
 
+    let nextButton = document.createElement('button');
+    nextButton.classList.add('btn');
+    nextButton.textContent=">";
+    
+
     for (let i= 0; i<pageSize; i++){
         let pageButton = document.createElement('button');
         pageButton.classList.add('btn');
@@ -70,13 +75,15 @@ function renderPagination(){
         if(i === page){
             pageButton.classList.add('active');
         }
+        if(page===0){
+            previousButton.classList.add('hidden');
+        }
+        if(page == pageSize-1){
+            nextButton.classList.add('hidden');
+        }
 
         pageContainer.append(pageButton);   
     }
-
-    let nextButton = document.createElement('button');
-    nextButton.classList.add('btn');
-    nextButton.textContent=">";
     pageContainer.append(nextButton);
 }
 

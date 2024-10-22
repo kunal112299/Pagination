@@ -88,3 +88,6 @@
     background-color: #3896fd;
     color: white;
 }
+.hidden{
+    visibility: hidden;
+}
